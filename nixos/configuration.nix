@@ -18,6 +18,9 @@
     neovim
     wget
     git
+
+    # Languages and compilers
+    gcc
   ];
 
   # Users
