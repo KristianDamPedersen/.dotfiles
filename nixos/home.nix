@@ -56,8 +56,6 @@ in {
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    # Neovim config
-    xdg.configFile."nvim".source = ../nvim;
 
   };
 
@@ -82,6 +80,9 @@ in {
     # -- Configure shell aliases
     shellAliases = myAliases;
   };
+    
+  # -- NEOVIM --
+  xdg.configFile."nvim".source = ../nvim;
 
 
   # Let Home Manager install and manage itself.
