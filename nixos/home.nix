@@ -57,7 +57,8 @@ in {
     # '';
 
     # Neovim config
-    xdg.configFile.nvim.source = ../nvim/;
+    xdg.configFile."nvim".source = ../nvim;
+
   };
 
   # Home Manager can also manage your environment variables through
