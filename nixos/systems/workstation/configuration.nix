@@ -86,10 +86,7 @@
     isNormalUser = true;
     description = "kristian";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      neovim
-      git
-    ];
+    packages = with pkgs; [];
   };
 
   # List packages installed in system profile. To search, run:
@@ -97,6 +94,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+     git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

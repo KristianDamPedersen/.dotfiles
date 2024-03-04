@@ -1,8 +1,6 @@
 { config, lib, pkgs, ...}:
 {
 
-  environment.systemPackages = with pkgs; [
-    gcc
-  ];
+  home.packages = [ pkgs.gcc ];
   xdg.configFile."nvim".source = ../../../nvim;
 }

@@ -31,6 +31,10 @@ in {
 
     pkgs.htop
 
+    pkgs.git
+
+    pkgs.neovim
+
     # Programming languages
     pkgs.sourcehut.python
     pkgs.python311Packages.pip
