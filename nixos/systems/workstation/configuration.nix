@@ -87,7 +87,6 @@
     description = "kristian";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
       neovim
       git
     ];
