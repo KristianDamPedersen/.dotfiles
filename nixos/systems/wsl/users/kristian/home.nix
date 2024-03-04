@@ -5,6 +5,9 @@ let
     ll = "ls -la";
   };
 in {
+  imports = [
+    ../../../../modules/cli/nvim.nix # Neovim comfiguration
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "kristian";
@@ -85,10 +88,6 @@ in {
     shellAliases = myAliases;
   };
     
-  # -- NEOVIM --
-  xdg.configFile."nvim".source = ../../../../nvim; # Long ass import, can this be changed?
-
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
