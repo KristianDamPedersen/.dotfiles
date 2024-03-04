@@ -28,8 +28,6 @@ in {
 
     pkgs.htop
 
-    pkgs.hello
-
     # Programming languages
     pkgs.sourcehut.python
     pkgs.python311Packages.pip
@@ -88,7 +86,7 @@ in {
   };
     
   # -- NEOVIM --
-  xdg.configFile."nvim".source = ../nvim;
+  xdg.configFile."nvim".source = ../../../../nvim; # Long ass import, can this be changed?
 
 
   # Let Home Manager install and manage itself.
