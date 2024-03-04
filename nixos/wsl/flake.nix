@@ -42,9 +42,9 @@
       # "nixos" should match the user name
       kristian = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	modules  =[ 
-	  ./home.nix 
-	];
+	      modules  =[ 
+	      ./users/kristian/home.nix 
+	      ];
       };
     };
   };

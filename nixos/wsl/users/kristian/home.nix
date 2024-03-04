@@ -28,6 +28,8 @@ in {
 
     pkgs.htop
 
+    pkgs.hello
+
     # Programming languages
     pkgs.sourcehut.python
     pkgs.python311Packages.pip
