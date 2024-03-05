@@ -1,0 +1,12 @@
+keys:
+  - &admin_kristian age1sfrsdr5vmpr8mjzezdkvmzxa07m0c4grjyud0l4yjp04ww20kgyq8szu4p
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      age:
+      - *admin_kristian
+  - path_regex: secrets/kristian/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      age:
+      - *admin_kristian

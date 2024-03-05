@@ -25,19 +25,24 @@ in {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.neofetch
-
-    pkgs.gitui
-
-    pkgs.htop
-
+    # Core
     pkgs.git
-
     pkgs.neovim
+
+    pkgs.xclip # Nescessary for lastpass-cli
+    pkgs.lastpass-cli
+
+    # Cool clis
+    pkgs.neofetch
+    pkgs.gitui
+    pkgs.htop
 
     # Programming languages
     pkgs.sourcehut.python
     pkgs.python311Packages.pip
+
+    # Browser
+    pkgs.firefox
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

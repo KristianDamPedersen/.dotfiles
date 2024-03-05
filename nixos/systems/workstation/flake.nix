@@ -13,10 +13,15 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs"; # Ensures the same version as nixpkgs
     };
+
+    # Secrets manager 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+    };
   };
   
   # What we do with the fetched stuff
-  outputs = {self, nixpkgs, home-manager, ... }:
+  outputs = {self, nixpkgs, home-manager, sops-nix, ... }:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -26,9 +31,10 @@
       # "nixos" should match the host name
       nixos = lib.nixosSystem {
         inherit system;
-	modules  =[ 
-	  ./configuration.nix 
-	];
+	      modules  =[ 
+	        ./configuration.nix
+          sops-nix.nixosModules.sops
+	      ];
       };
     };
 

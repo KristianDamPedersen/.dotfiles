@@ -1,0 +1,3 @@
+Things to configure automatically / prompt
+1. LastPass cli
+- Has to confirm new device by email before you're able to login
