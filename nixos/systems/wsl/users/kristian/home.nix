@@ -30,6 +30,9 @@ in {
     pkgs.gitui
 
     pkgs.htop
+    
+    pkgs.xclip # Required by lastpass
+    pkgs.lastpass-cli
 
     # Programming languages
     pkgs.sourcehut.python
