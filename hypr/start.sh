@@ -8,4 +8,6 @@ nm-applet --indicator &
 # The bar
 waybar &
 
-dunst
+dunst &
+# clipboard
+wl-paste -t text --watch clipman store --no-persist

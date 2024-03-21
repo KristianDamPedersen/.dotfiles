@@ -137,6 +137,9 @@
     ## Wallpaper daemon
     swww
 
+    ## Clipboard
+    pkgs.clipman
+
     # Terminal (kitty is default for hyprland)
     kitty
 
