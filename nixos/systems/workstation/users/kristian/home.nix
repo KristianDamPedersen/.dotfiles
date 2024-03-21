@@ -7,6 +7,7 @@ let
 in {
   imports = [
     ../../../../modules/cli/nvim.nix # Neovim comfiguration
+    ../../../../modules/gui/hyprland.nix # Hyprland comfiguration
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
