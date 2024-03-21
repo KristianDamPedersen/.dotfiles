@@ -29,6 +29,9 @@ in {
     pkgs.git
     pkgs.neovim
 
+    # Terminal
+    pkgs.kitty
+
     pkgs.xclip # Nescessary for lastpass-cli
     pkgs.lastpass-cli
 
@@ -96,7 +99,7 @@ in {
     # -- Configure shell aliases
     shellAliases = myAliases;
   };
-    
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

@@ -43,11 +43,32 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable hyprland
+  programs.hyprland = {
+      enable = true;
+      enableNvidiaPatches = true; # Since i am using NVIDIA card
+      xwayland.enable = true;
+  };
+  environment.sessionVariables = {
+    # If your cursor becomes invisible
+    WLR_NO_HARDWARE_CURSORS = "1";
+    # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    # OpenGL
+    opengl.enable = true;
+
+    # Most wayland compositors need this
+    nvidia.modesetting.enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -55,11 +76,17 @@
     xkbVariant = "";
   };
 
+  security.polkit.enable =  true;
+
   # Configure console keymap
   console.keyMap = "dk-latin1";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Enable services for screen sharing etc.
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -95,6 +122,29 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
      git
+
+    # Wayland core software
+    pkgs.waybar 
+    ## In order to display workspaces properly on wayland we need this override
+    (pkgs.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+      })
+    )
+    ## Notification daemon
+    pkgs.dunst
+    libnotify
+    
+    ## Wallpaper daemon
+    swww
+
+    # Terminal (kitty is default for hyprland)
+    kitty
+
+    # App launcher
+    rofi-wayland
+
+    # Netowrk applet
+    pkgs.networkmanagerapplet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
